@@ -26,6 +26,11 @@ exports.initialize = function(pathsObj) {
 // modularize your code. Keep it clean!
 
 exports.readListOfUrls = function(callback) {
+  // create a file handler
+  // create a local buffer variable to save the text strings
+  // read all the text strings in the file
+  //    save the text strings to the local buffer
+  // return the local buffer
 };
 
 exports.isUrlInList = function(url, callback) {
