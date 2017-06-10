@@ -1,5 +1,5 @@
 1. Specification:
-Inputs are a url string and a callback function.  No side effects.
+Inputs are a url string and a callback function.  Side effects are modifying the txt file.
 
 2. Justification:
 To add a url to the list.
