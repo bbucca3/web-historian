@@ -52,6 +52,16 @@ exports.isUrlInList = function(url, callback) {
 };
 
 exports.addUrlToList = function(url, callback) {
+  // using fs..
+  // if url is not in list 
+  //   append line feed character to end of url
+  //   write url to list
+  fs.appendFile(exports.paths.list, url + '\n', function (err) {
+    if (err) {
+      throw err;
+    }
+    callback();
+  });
 };
 
 exports.isUrlArchived = function(url, callback) {
