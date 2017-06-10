@@ -77,4 +77,10 @@ exports.isUrlArchived = function(url, callback) {
 };
 
 exports.downloadUrls = function(urls) {
+  // iterate over list of urls
+  // for each ...
+  //   get the corresponding url from the web....
+  //      in form of text string, save into local variable
+  //   create fileName with name of current url in archive folder
+  //   write corresponsponding text to that file
 };
