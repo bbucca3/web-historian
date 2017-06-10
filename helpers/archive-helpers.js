@@ -46,7 +46,9 @@ exports.isUrlInList = function(url, callback) {
   //  return true
   // else
   //  return false
-  
+  exports.readListOfUrls(function(dataArr) {
+    callback(dataArr.indexOf(url) >= 0);
+  });
 };
 
 exports.addUrlToList = function(url, callback) {
