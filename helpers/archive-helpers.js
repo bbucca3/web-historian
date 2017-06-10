@@ -37,11 +37,16 @@ exports.readListOfUrls = function(callback) {
     var dataArr = data.split('\n');
     callback(dataArr);
   });
-  
- // fs.close();
 };
 
 exports.isUrlInList = function(url, callback) {
+  // read list of urls
+  // compare each url in list with input url
+  // if found
+  //  return true
+  // else
+  //  return false
+  
 };
 
 exports.addUrlToList = function(url, callback) {
