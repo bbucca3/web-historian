@@ -69,13 +69,11 @@ exports.isUrlArchived = function(url, callback) {
   // read file names in archived dir
     // make comparison with passed in url
     // send true or false to callback
-  fs.access(exports.paths.archivedSites, (err) => {
-    if (err) { 
-      throw err;
-    }
-    // console.log(data);
-    callback(url);
-  });
+  fs.access(exports.paths.archivedSites + '/' + url, 
+    fs.constants.F_OK, (err) => {
+      err ? callback(false) : callback(true);
+    });
+  // callback(result);
 };
 
 exports.downloadUrls = function(urls) {
