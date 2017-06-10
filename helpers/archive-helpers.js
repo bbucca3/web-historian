@@ -65,6 +65,10 @@ exports.addUrlToList = function(url, callback) {
 };
 
 exports.isUrlArchived = function(url, callback) {
+  // using fs...
+  // read file names in archived dir
+    // make comparison with passed in url
+    // send true or false to callback
 };
 
 exports.downloadUrls = function(urls) {

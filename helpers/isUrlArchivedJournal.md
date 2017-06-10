@@ -8,5 +8,6 @@ To see if we have archived the url.
 Read through the list of archived urls to determine if the given url is archived.
 
 4. Visualization:
+Image archived.
 
 
