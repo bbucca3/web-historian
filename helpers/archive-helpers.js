@@ -1,6 +1,9 @@
 var fs = require('fs');
 var path = require('path');
 var _ = require('underscore');
+var http = require('http');
+var request = require('request');
+
 
 /*
  * You will need to reuse the same paths many times over in the course of this sprint.
@@ -70,10 +73,12 @@ exports.isUrlArchived = function(url, callback) {
     // make comparison with passed in url
     // send true or false to callback
   fs.access(exports.paths.archivedSites + '/' + url, 
+    // from node docs:  
+    // option that says nothing about permissions
+    // just tells us if it exists
     fs.constants.F_OK, (err) => {
       err ? callback(false) : callback(true);
     });
-  // callback(result);
 };
 
 exports.downloadUrls = function(urls) {
@@ -83,4 +88,11 @@ exports.downloadUrls = function(urls) {
   //      in form of text string, save into local variable
   //   create fileName with name of current url in archive folder
   //   write corresponsponding text to that file
+  urls.forEach(function(url) {
+    request('http://' + url, function (error, response, body) {
+      fs.writeFile(exports.paths.archivedSites + '/' + url, body);
+    });
+  });
+  
+  
 };
